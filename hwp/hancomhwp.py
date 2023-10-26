@@ -1,5 +1,10 @@
+'''
+아래한글 문서를 읽어 데이터프레임에 저장
+'''
+
 import olefile
 import pandas as pd
+
 f = olefile.OleFileIO('hwp\보고서.hwp')
 #PrvText 스트림 내의 내용을 읽기
 encoded_text = f.openstream('PrvText').read() 

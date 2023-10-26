@@ -1,0 +1,86 @@
+{
+    "IF_INFO": {
+        "if_id": "DLSL001",
+        "if_key": "66b173ec-8e7a-46d4-834b-f5bf8fce24e4",
+        "if_data_cnt": 3
+    },
+    "IF_DATA": [
+        {
+            "log_clct_dt": "20200908192355",
+            "log_div_cd": "CN",
+            "seq_no": 1,
+            "sys_div_cd": "SMART",
+            "user_ip_addr": "211.39.123.456",
+            "user_id": "066423",
+            "empno": "DT066423",
+            "user_nm": "홍길동",
+            "user_team_nm": "정보보호팀",
+            "admin_grad_acnt_yn": "Y",
+            "url_val": "SearchLoginHistory.do",
+            "http_rqst_val": {
+                "search_s_date": "20200101",
+                "title": "공지"
+            },
+            "log_clct_utc": "20200908192355",
+            "login_sucs_yn": "N"
+        },
+        {
+            "log_clct_dt": "20200909192355",
+            "log_div_cd": "AC",
+            "seq_no": 2,
+            "sys_div_cd": "SMART",
+            "user_ip_addr": "211.39.123.456",
+            "user_id": "066424",
+            "empno": "DT066424",
+            "user_nm": "홍영희",
+            "user_team_nm": "정보보호팀",
+            "admin_grad_acnt_yn": "Y",
+            "url_val": "SearchLoginHistory.do",
+            "http_rqst_val": {
+                "search_s_date": "20200101",
+                "title": "공지"
+            },
+            "log_clct_utc": "20200908192355",
+            "scr_cat_cd": "I",
+            "scr_nm": "[pm01] UserDetailInfo_download",
+            "act_div_cd": "DNL",
+            "file_hndl_cd": "D",
+            "file_nm": [
+                {
+                    "n": "보안점검요약",
+                    "e": "txt"
+                },
+                {
+                    "n": "개인정보목록",
+                    "e": "xlsx"
+                }
+            ],
+            "file_dwld_resn_cntt": "개인정보 체크를 위한 목적",
+            "srch_outpt_unit_val": 100
+        },
+        {
+            "log_clct_dt": "20200909192355",
+            "log_div_cd": "AU",
+            "seq_no": 2,
+            "sys_div_cd": "SMART",
+            "user_ip_addr": "211.39.123.456",
+            "user_id": "066123",
+            "empno": "DT066123",
+            "user_nm": "홍철수",
+            "user_team_nm": "정보보호팀",
+            "admin_grad_acnt_yn": "Y",
+            "url_val": "CheckLoginHistory.do",
+            "http_rqst_val": {
+                "search_s_date": "20200101",
+                "title": "보안점검"
+            },
+            "log_clct_utc": "20200908192355",
+            "scr_nm": " [pm02] UserDetailInfo_update",
+            "aut_chg_cd": "CHG",
+            "aut_chg_user_id": "066333",
+            "aut_chg_user_nm": "김철수",
+            "aut_chg_user_team_nm": "ICT선행기술팀",
+            "chg_aut_nm": "R_CRE001"
+        }
+    ]
+}

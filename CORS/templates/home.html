@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> cors 예제</title>
+        <link rel="shortcut icon" href="#">
+    </head>
+
+    <body>
+        <h1>cors 예제</h1>
+        <script>
+            fetch('http://127.0.0.1:5000/')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.message);
+                })
+                .catch(error => {
+                    console.error('데이터 가져오기 실패:', error);
+                });
+        </script>
+    </body>
+</html>

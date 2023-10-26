@@ -1,3 +1,7 @@
+'''
+기상청 API 를 이용하여, 날씨 정보 호출
+'''
+
 import requests
 from datetime import datetime
 import xmltodict
@@ -49,10 +53,13 @@ def forecast():
         # 강수형태: 없음(0), 비(1), 비/눈(2), 눈(3), 빗방울(5), 빗방울눈날림(6), 눈날림(7)
         if item['category'] == 'PTY':
             weather_data['sky2'] = item['fcstValue']
+        weather_data['fcstDate'] = item['fcstDate']
+        weather_data['fcstTime'] = item['fcstTime']
 
     return weather_data
 
-def xlsopen(location):
+def xlsopen(location:str):
+    "위경도값을 X, Y 좌표로 반환"
     file_name = 'weather\위경도xy.xlsx'
 
     df = pd.read_excel(file_name)
@@ -88,12 +95,17 @@ def proc_weather():
     if dict_sky['tmp'] != None:
         str_sky = str_sky + "온도 : " + dict_sky['tmp'] + 'ºC \n'
     if dict_sky['hum'] != None:
-        str_sky = str_sky + "습도 : " + dict_sky['hum'] + '%'
+        str_sky = str_sky + "습도 : " + dict_sky['hum'] + '% \n'
 
+    if dict_sky['fcstDate'] != None:
+        str_sky = str_sky + "날짜 : " + dict_sky['fcstDate'] + ' \n'
+    if dict_sky['fcstTime'] != None:
+        str_sky = str_sky + "시간 : " + dict_sky['fcstTime'] + ' \n'
     return str_sky
     
 if __name__ == '__main__':
-    location = '전곡'
+    # 지역명을 기준으로 x, y 좌표 취득
+    location = input('지역 : ')
     df = xlsopen(location)
 
     keys = 'mPe5507lVJZkfJMjxR1h5Wi/hU67x7qcgG75ZJn1wd5U46niRp+5ouWNzUOiujcJfqrExmfvo5qf2iYaWjGtNQ=='
@@ -108,4 +120,4 @@ if __name__ == '__main__':
             'ny' : str(df['격자 Y'].iloc[0]) }
     
     print(proc_weather())
-
+    print(params)
